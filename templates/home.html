@@ -2,12 +2,12 @@
 {% block content %}
 
 <h1> Welcome to my portfolio</h1>
-<form method="POST" action="">
+<form method="POST" action=""> {% csrf_token %}
 
 {{ form.as_p }}
 
-<p><a type = 'submit' class="btn btn-primary btn-lg" href="#" role="button">Learn More &raquo;</a></p>
-<!--<input  type='submit' class ='btn' href= "#" >-->
+<!--<p><a type = 'submit' class="btn btn-primary btn-lg" href="#" role="button">Learn More &raquo;</a></p>-->
+<input  type='submit' value = 'Learn More &raquo;'class ='btn' href= "#" >
 	
 </form>
 {% endblock %}

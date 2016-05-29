@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Main(models.Model):
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     ip_address = models.CharField(max_length=120, default='IPAddress')
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
