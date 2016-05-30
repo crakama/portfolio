@@ -1,5 +1,5 @@
 import uuid
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from .forms import EmailForm
 from .models import Main
 
@@ -40,6 +40,14 @@ def home(request):
             view.ref_id = get_ref_id()
             view.ip_address = get_ip(request)
             view.save()
+        return HttpResponseRedirect("{}".format(view.ref_id))
     context = {"form": form}
     template = "home.html"
+    return render(request, template, context)
+
+
+def profile(request, ref_id):
+
+    context = {"ref_id": ref_id}
+    template = "profile.html"
     return render(request, template, context)

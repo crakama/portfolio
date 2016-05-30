@@ -8,3 +8,4 @@ from .models import Main
 class EmailForm(forms.ModelForm):
     class Meta:
         model = Main
+        fields = ["email"]
