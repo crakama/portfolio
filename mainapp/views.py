@@ -31,6 +31,13 @@ def get_ref_id():
 
 def home(request):
     ''' A function that handles the learnmore submit button on homepage'''
+    try:
+        join_id = request.session['join_id_ref']
+        obj = Main.objects.get(id=join_id)
+
+    except:
+        obj = None
+
     form = EmailForm(request.POST or None)
     if form.is_valid():
         view = form.save(commit=False)
