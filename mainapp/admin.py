@@ -5,7 +5,7 @@ from .models import Main
 
 
 class MainAdmin(admin.ModelAdmin):
-    list_display = ['__unicode__', 'timestamp', 'updated']
+    list_display = ['__unicode__', 'reffered_by', 'timestamp', 'updated']
 
     class Meta:
         model = Main

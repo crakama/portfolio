@@ -32,7 +32,7 @@ def get_ref_id():
 def home(request):
     ''' A function that handles the learnmore submit button on homepage'''
     try:
-        join_id = request.session['join_id_ref']
+        join_id = request.session['-']
         obj = Main.objects.get(id=join_id)
 
     except:
@@ -45,6 +45,8 @@ def home(request):
         view, created = Main.objects.get_or_create(email=email)
         if created:
             view.ref_id = get_ref_id()
+            if obj is not None:
+                view.reffered_by = obj
             view.ip_address = get_ip(request)
             view.save()
         return HttpResponseRedirect("{}".format(view.ref_id))
