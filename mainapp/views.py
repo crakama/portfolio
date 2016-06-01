@@ -1,7 +1,8 @@
 import uuid
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect,Http404
 from .forms import EmailForm
 from .models import Main
+from django.contrib.sites.models import Site
 
 # Create your views here.
 
@@ -28,11 +29,28 @@ def get_ref_id():
     except:
         return ref_id
 
+def profile(request, ref_id):
+    try:
+        main_obj = Main.objects.get(ref_id=ref_id)
+        #obj = Main.objects.filter(reffered_by=main_obj)
+        count = main_obj.referral.all().count()
+        ref_url = "http://google.com/?ref=%s" % (main_obj.ref_id)
+        context = {
+            "ref_id": main_obj.ref_id,
+            "count": count,
+            "ref_url": ref_url
+        }
+        template = "profile.html"
+        return render(request, template, context)
+    except:
+        raise Http404
+
+
 
 def home(request):
     ''' A function that handles the learnmore submit button on homepage'''
     try:
-        join_id = request.session['-']
+        join_id = request.session['ref']
         obj = Main.objects.get(id=join_id)
 
     except:
@@ -55,8 +73,21 @@ def home(request):
     return render(request, template, context)
 
 
-def profile(request, ref_id):
+# def profile(request, ref_id):
+#     try:
+#         main_obj = Main.objects.get(ref_id=ref_id)
+#         friendsReferred = Main.object.filter(reffered_by=main_obj)
+#         count = main_obj.referral.all().count()
+#         # ref_url = "http://{}/?ref={}".format(
+#         #     Site.objects.get_current().domain, main_obj.ref_id)
+#         ref_url = "http://google.com/?ref={}".format(main_obj.ref_id)
+#         context = {"ref_id": main_obj.ref_id,
+#                    "count": count, "ref_url": ref_url}
 
-    context = {"ref_id": ref_id}
-    template = "profile.html"
-    return render(request, template, context)
+#         template = "profile.html"
+#         return render(request, template, context)
+#     except:
+#         print "No data passed{}".format(Http404)
+
+
+
