@@ -1,6 +1,5 @@
 """
 Django settings for portfolio project.
-
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
 
@@ -87,5 +86,11 @@ TEMPLATE_DIRS = (
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = 'os.path.join(BASE_DIR, "static", "static_root")'
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),)
+    os.path.join(BASE_DIR, "static", "static_dir"),)
+
+MEDIA_ROOT = 'os.path.join(BASE_DIR, "static", "media")'
+
+MEDIA_URL = '/media/'

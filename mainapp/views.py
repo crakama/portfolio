@@ -46,7 +46,6 @@ def profile(request, ref_id):
         raise Http404
 
 
-
 def home(request):
     ''' A function that handles the learnmore submit button on homepage'''
     try:
