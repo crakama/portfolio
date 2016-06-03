@@ -5,23 +5,25 @@
 
 
 
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron" >
       <div class="container">
-      <div  class="col-md-6 pull-right">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p>   <a class="btn btn-primary btn-lg" href="#" role="button">Details &raquo;</a></p>
+      <div  class="col-md-6 pull-right" style="text-align: center;">
+      <i class="fa fa-share-alt fa-5x" aria-hidden="true"></i>
+        <h1>Send Invite</h1>
+        <p>Share this profile via Email, Facebook, Twitter, Reddit or LinkedIn</p>
+       <div class="well" style="background-color: white;">{{ref_url}}</div>
         </div>
         <div  class="col-md-6">
-            <img src="{{STATIC_URL}}img/launch.jpg" class="img-responsive img-rounded" />
+            <img src="{{STATIC_URL}}img/kate.jpg" class="img-responsive img-rounded" />
         </div>
       </div>
     </div>
  <div class="container">
 {{ref_id}}
 {{count}}
-{{ref_url}}
+
 </div>
 {% endblock %}
 
