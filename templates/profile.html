@@ -8,22 +8,194 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron" >
-      <div class="container">
-      <div  class="col-md-6 pull-right" style="text-align: center;">
-      <i class="fa fa-share-alt fa-5x" aria-hidden="true"></i>
-        <h1>Send Invite</h1>
-        <p>Share this profile via Email, Facebook, Twitter, Reddit or LinkedIn</p>
-       <div class="well" style="background-color: white;">{{ref_url}}</div>
+      <div class="container" id="cont">
+      <style type="text/css">
+       #cont{
+            /*overflow:hidden;
+            width:auto;
+            display:inline;*/
+       }
+       #abc{
+       float:left;
+       /*margin:0px 0px 10px 10px;*/
+       }
+
+      </style>
+      <div  class="col-md-6 pull-right " style="text-align: center;">
+      <i class="fa fa-share-alt fa-5x" ></i>
+              <h1>My Bio</h1>
+        <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.</p>
+
+       <div class="well"> {{ ref_url }}</div>
+
+        <br /> <span>Share</span><br />
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ ref_url }}" target="_blank">
+          <i class="fa fa-facebook-square fa-4x" style="color: #43609C;"></i>
+        </a>
+
+                        <a href="https://twitter.com/home?status=Baliemcoder%20python%20programmer"> <i class="fa fa-twitter-square fa-4x" style="color:#4099FF" target="_blank"></i></a>
+
+                <i class="fa fa-linkedin-square fa-4x" style="color:#007bb6"></i>
+                
+
+                <a href='https://plus.google.com/share?url={{ share_url }}' target="_blank"><i class="fa fa-google-plus-square fa-4x" style="color:#D34836"></i></a>
+
+        
         </div>
-        <div  class="col-md-6">
-            <img src="{{STATIC_URL}}img/kate.jpg" class="img-responsive img-rounded" />
+
+
+        <div  class="col-md-6 jumbotron-photo" id="abc">
+            <img src="{{STATIC_URL}}img/kate.jpg" class="img-responsive img-rounded " />
         </div>
       </div>
     </div>
+
  <div class="container">
 {{ref_id}}
 {{count}}
 
 </div>
+
+
+
+<div class="container  text-center">
+
+    <br />
+    <div class="row"> <h1>Traning and Certifications</h1>
+        <div class="col-sm-3">
+ 
+            <hr />
+            <span class="text-left">
+            <h6><strong>Rewards Included:</strong></h6>
+            <ul>
+                <li>Reward 1</li>
+                <li>Reward 2</li>
+            </ul>
+            <hr />
+            </span>
+        </div>
+
+        <div class="col-md-3">
+ 
+            <hr />
+            <span class="text-left">
+            <h6><strong>Rewards Included:</strong></h6>
+            <ul>
+                <li>Reward 1</li>
+                <li>Reward 2</li>
+            </ul>
+            <hr />
+            </span>
+        </div>
+
+        <div class="col-md-3">
+           
+
+            <hr />
+            <span class="text-left">
+            <h6><strong>Rewards Included:</strong></h6>
+            <ul>
+                <li>Reward 1</li>
+                <li>Reward 2</li>
+            </ul>
+            <hr />
+            </span>
+        </div>
+
+        <div class="col-md-3">
+
+            <hr />
+            <span class="text-left">
+            <h6><strong>Rewards Included:</strong></h6>
+            <ul>
+                <li>Reward 1</li>
+                <li>Reward 2</li>
+            </ul>
+            <hr />
+            </span>
+        </div>
+    </div>
+        <br />
+    <div class="row"> 
+    <h1>Links </h1>
+
+    <div class="row text-center feature-row">
+        <div class="col-sm-14">
+
+            <div class="col-sm-3 col-sm">
+                <i class="fa fa-upload fa-3x"></i>
+                <h3>Github</h3>
+                <p class="lead">
+                    Some feature text goes here.
+                </p>
+            </div>
+
+            <div class="col-sm-3">
+                <i class="fa fa-upload fa-3x"></i>
+                <h3>LinkedIn</h3>
+                <p class="lead">
+                    Some feature text goes here.
+                </p>
+            </div>
+                        <div class="col-sm-3">
+                <i class="fa fa-upload fa-3x"></i>
+                <h3>StackOverFlow</h3>
+                <p class="lead">
+                    Some feature text goes here.
+                </p>
+            </div>
+                        <div class="col-sm-3">
+                <i class="fa fa-upload fa-3x"></i>
+                <h3>Hacker Rank</h3>
+                <p class="lead">
+                    Some feature text goes here.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+        <br />
+    <div class="row"> <h1>Projects</h1>
+
+</div>
+ <div class="row text-center feature-row">
+        <div class="col-sm-14">
+
+            <div class="col-sm-3 col-sm">
+                <i class="fa fa-upload fa-3x"></i>
+                <h3>Feature</h3>
+                <p class="lead">
+                    Some feature text goes here.
+                </p>
+            </div>
+
+            <div class="col-sm-3">
+                <i class="fa fa-upload fa-3x"></i>
+                <h3>Feature</h3>
+                <p class="lead">
+                    Some feature text goes here.
+                </p>
+            </div>
+                        <div class="col-sm-3">
+                <i class="fa fa-upload fa-3x"></i>
+                <h3>Feature</h3>
+                <p class="lead">
+                    Some feature text goes here.
+                </p>
+            </div>
+                        <div class="col-sm-3">
+                <i class="fa fa-upload fa-3x"></i>
+                <h3>Feature</h3>
+                <p class="lead">
+                    Some feature text goes here.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
 {% endblock %}
 
